@@ -8,6 +8,9 @@
 	],
 	"types": "./src",
 	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
 		"build": "webpack"
 	},
