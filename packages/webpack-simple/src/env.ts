@@ -1,8 +1,8 @@
-// prettier-ignore
 export const {
+	// prettier-ignore
 	NODE_ENV = 'development',
 	RUNTIME_ENV = 'local',
-	PORT: port = "3000"
+	PORT: port = '3000',
 } = process.env;
 
 export const IS_DEV = NODE_ENV === 'development';

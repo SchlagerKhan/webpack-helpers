@@ -1,5 +1,5 @@
-import path from 'path';
-import webpack from 'webpack';
+import * as path from 'path';
+import * as webpack from 'webpack';
 
 import HtmlPlugin from 'html-webpack-plugin';
 import CssPlugin from 'mini-css-extract-plugin';

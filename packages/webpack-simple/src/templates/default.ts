@@ -1,6 +1,6 @@
 import 'webpack-dev-server';
 import { Configuration } from 'webpack';
-import merge from 'webpack-merge';
+import * as merge from 'webpack-merge';
 
 import { NODE_ENV } from '../env';
 

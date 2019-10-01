@@ -1,5 +1,5 @@
-import { Configuration } from 'webpack';
-import merge from 'webpack-merge';
+import { Configuration } from 'webpack-dev-server';
+import * as merge from 'webpack-merge';
 
 import { babelLoader, cssLoader, imageLoader, manifestLoader } from '../loaders';
 import { createHtmlPlugin, CssPlugin, TerserPlugin } from '../plugins';

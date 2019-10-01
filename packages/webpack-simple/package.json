@@ -13,7 +13,8 @@
 	},
 	"scripts": {
 		"clean": "rm -rf lib",
-		"build": "yarn clean && webpack"
+		"build": "babel src --out-dir lib --extensions='.ts'",
+		"prepare": "yarn clean && yarn build"
 	},
 	"peerDependencies": {
 		"@babel/core": "^7.6.2",

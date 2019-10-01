@@ -1,3 +1,6 @@
 {
-	"extends": "@schlagerkhan/tsconfig"
+	"extends": "@schlagerkhan/tsconfig",
+	"compilerOptions": {
+		"esModuleInterop": true
+	}
 }

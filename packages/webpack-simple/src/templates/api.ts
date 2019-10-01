@@ -8,7 +8,7 @@ interface ApiOpts {
 	publicPath?: string;
 }
 
-export function createApiConfig(opts: ApiOpts, otherOpts: Configuration): Configuration {
+export function createApiConfig(opts: ApiOpts, otherOpts?: Configuration): Configuration {
 	const filename = 'index.js';
 
 	return createNodeConfig({ ...opts, filename }, otherOpts);

@@ -1,5 +1,5 @@
 import { Configuration } from 'webpack';
-import merge from 'webpack-merge';
+import * as merge from 'webpack-merge';
 import nodeExternals from 'webpack-node-externals';
 
 import { babelLoader } from '../loaders';
