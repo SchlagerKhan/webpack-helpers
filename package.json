@@ -9,7 +9,7 @@
 	"scripts": {
 		"test": "jest",
 		"build": "npx lerna run build",
-		"deploy": "npx lerna publish"
+		"deploy": "yarn build && npx lerna publish"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.6.2",
