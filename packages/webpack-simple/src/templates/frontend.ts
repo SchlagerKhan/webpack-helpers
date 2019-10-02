@@ -1,4 +1,4 @@
-import { Configuration } from 'webpack-dev-server';
+import { Configuration } from 'webpack';
 import * as merge from 'webpack-merge';
 
 import { babelLoader, cssLoader, imageLoader, manifestLoader } from '../loaders';
@@ -19,7 +19,7 @@ export function createFrontendConfig(opts: FrontendOpts, otherOpts?: Configurati
 	const { port, htmlOptions, ...restOpts } = opts;
 	const { path } = opts;
 
-	const filename = getJsFile(true);
+	const filename = getJsFile();
 	const defaultOpts = { filename, ...restOpts };
 	const defaultConfig = createDefaultConfig(defaultOpts, otherOpts);
 
@@ -27,7 +27,11 @@ export function createFrontendConfig(opts: FrontendOpts, otherOpts?: Configurati
 		module: {
 			rules: [babelLoader, cssLoader, imageLoader, manifestLoader],
 		},
-		plugins: [createHtmlPlugin(htmlOptions), new CssPlugin({ filename: getCssFile() })],
+		plugins: [
+			// prettier-ignore
+			createHtmlPlugin(htmlOptions),
+			new CssPlugin({ filename: getCssFile() }),
+		],
 		devServer: {
 			host: '0.0.0.0',
 			port,

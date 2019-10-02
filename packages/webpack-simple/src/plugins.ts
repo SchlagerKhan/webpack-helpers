@@ -5,12 +5,9 @@ import HtmlPlugin from 'html-webpack-plugin';
 import CssPlugin from 'mini-css-extract-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 
-import {
-	// prettier-ignore
-	NODE_ENV,
-	RUNTIME_ENV,
-	PORT,
-} from './env';
+import { NODE_ENV, RUNTIME_ENV, PORT } from './env';
+
+export { HtmlPlugin, CssPlugin, TerserPlugin };
 
 export const envPlugin = new webpack.EnvironmentPlugin({
 	NODE_ENV,
@@ -24,5 +21,3 @@ export function createHtmlPlugin(options: object = {}) {
 
 	return new HtmlPlugin(opts);
 }
-
-export { HtmlPlugin, CssPlugin, TerserPlugin };

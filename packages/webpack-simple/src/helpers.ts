@@ -1,14 +1,11 @@
 import { IS_PROD } from './env';
 
-// HELPERS
 export function getJsFile(includeHash?: boolean) {
-	if (!IS_PROD && !includeHash) return 'index.js';
+	const withHash = IS_PROD || includeHash;
 
-	return 'index.[hash].js';
+	return withHash ? 'index.[hash].js' : 'index.js';
 }
 
 export function getCssFile() {
-	if (!IS_PROD) return 'styles.css';
-
-	return 'styles.[hash].css';
+	return IS_PROD ? 'styled.[hash].css' : 'styles.css';
 }
