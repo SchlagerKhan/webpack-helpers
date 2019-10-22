@@ -1,11 +1,11 @@
 {
 	"name": "@schlagerkhan/webpack-simple",
 	"version": "0.0.7",
-	"main": "lib/index.js",
 	"files": [
 		"lib",
 		"src"
 	],
+	"main": "lib/index.js",
 	"types": "src/index.ts",
 	"license": "MIT",
 	"publishConfig": {

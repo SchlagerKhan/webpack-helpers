@@ -4,18 +4,24 @@ import * as merge from 'webpack-merge';
 
 import { NODE_ENV } from '../env';
 
-import { envPlugin } from '../plugins';
+import { createEnvPlugin } from '../plugins';
 import { stats, devtool } from '../misc';
 
-export interface DefaultOpts {
+export interface BasicOpts {
 	entry: string;
 	path: string;
-	publicPath?: string;
+	env?: {
+		[key: string]: any;
+	};
+}
+
+export interface DefaultOpts extends BasicOpts {
 	filename: string;
 }
 
 export function createDefaultConfig(opts: DefaultOpts, otherOpts?: Configuration): Configuration {
-	const { entry, filename, path, publicPath = '/' } = opts;
+	const { entry, filename, path, env } = opts;
+	const envPlugin = createEnvPlugin(env);
 
 	return merge.smart(
 		{
@@ -25,7 +31,6 @@ export function createDefaultConfig(opts: DefaultOpts, otherOpts?: Configuration
 			output: {
 				filename,
 				path,
-				publicPath,
 			},
 			resolve: {
 				extensions: ['.js', '.ts', '.tsx'],

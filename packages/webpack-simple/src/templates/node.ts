@@ -4,11 +4,14 @@ import nodeExternals from 'webpack-node-externals';
 
 import { babelLoader } from '../loaders';
 
-import { createDefaultConfig, DefaultOpts } from './default';
+import { createDefaultConfig, DefaultOpts, BasicOpts } from './default';
 
-export interface NodeOpts extends DefaultOpts {
+export interface BasicNodeOpts extends BasicOpts {
 	whitelist?: any[];
 }
+
+// prettier-ignore
+export type NodeOpts = DefaultOpts & BasicNodeOpts;
 
 export function createNodeConfig(opts: NodeOpts, otherOpts?: Configuration): Configuration {
 	const { whitelist } = opts;

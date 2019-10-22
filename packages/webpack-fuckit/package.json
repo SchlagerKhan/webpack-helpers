@@ -2,6 +2,7 @@
 	"name": "@schlagerkhan/webpack-fuckit",
 	"version": "0.0.7",
 	"main": "index.js",
+	"types": "@schlagerkhan/webpack-simple",
 	"license": "MIT",
 	"publishConfig": {
 		"access": "public"

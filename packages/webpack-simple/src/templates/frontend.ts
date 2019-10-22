@@ -5,18 +5,16 @@ import { babelLoader, cssLoader, imageLoader, manifestLoader } from '../loaders'
 import { createHtmlPlugin, CssPlugin, TerserPlugin } from '../plugins';
 import { getJsFile, getCssFile } from '../helpers';
 
-import { createDefaultConfig } from './default';
+import { createDefaultConfig, BasicOpts } from './default';
 
-interface FrontendOpts {
-	entry: string;
-	path: string;
+interface FrontendOpts extends BasicOpts {
 	publicPath?: string;
 	port: number;
 	htmlOptions?: object;
 }
 
 export function createFrontendConfig(opts: FrontendOpts, otherOpts?: Configuration): Configuration {
-	const { port, htmlOptions, ...restOpts } = opts;
+	const { publicPath = '/', port, htmlOptions, ...restOpts } = opts;
 	const { path } = opts;
 
 	const filename = getJsFile();
@@ -24,6 +22,9 @@ export function createFrontendConfig(opts: FrontendOpts, otherOpts?: Configurati
 	const defaultConfig = createDefaultConfig(defaultOpts, otherOpts);
 
 	return merge.smart(defaultConfig, {
+		output: {
+			publicPath,
+		},
 		module: {
 			rules: [babelLoader, cssLoader, imageLoader, manifestLoader],
 		},

@@ -1,8 +1,8 @@
 import { Configuration } from 'webpack';
 
-import { createNodeConfig } from './node';
+import { createNodeConfig, BasicNodeOpts } from './node';
 
-interface ApiOpts {
+interface ApiOpts extends BasicNodeOpts {
 	entry: string;
 	path: string;
 	publicPath?: string;

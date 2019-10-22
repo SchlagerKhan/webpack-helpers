@@ -1,4 +1,3 @@
-import * as path from 'path';
 import * as webpack from 'webpack';
 
 import HtmlPlugin from 'html-webpack-plugin';
@@ -9,15 +8,16 @@ import { NODE_ENV, RUNTIME_ENV, PORT } from './env';
 
 export { HtmlPlugin, CssPlugin, TerserPlugin };
 
-export const envPlugin = new webpack.EnvironmentPlugin({
-	NODE_ENV,
-	RUNTIME_ENV,
-	PORT,
-});
+export function createEnvPlugin(env) {
+	return new webpack.EnvironmentPlugin(
+		env || {
+			NODE_ENV,
+			RUNTIME_ENV,
+			PORT,
+		},
+	);
+}
 
-export function createHtmlPlugin(options: object = {}) {
-	const template = path.resolve('../static/index.html');
-	const opts = { template, ...options };
-
+export function createHtmlPlugin(opts) {
 	return new HtmlPlugin(opts);
 }
