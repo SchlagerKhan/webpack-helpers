@@ -33,7 +33,7 @@ export function createDefaultConfig(opts: DefaultOpts, otherOpts?: Configuration
 				path: distDir,
 			},
 			resolve: {
-				extensions: ['.js', '.ts', '.tsx'],
+				extensions: ['.js', '.jsx', '.ts', '.tsx'],
 			},
 			plugins: [envPlugin],
 			stats,
