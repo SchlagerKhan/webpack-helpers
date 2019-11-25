@@ -73,7 +73,8 @@ The templates are the function one actually uses to create configs (if you don't
     -   The default config that all other extends from. Takes in the following arguments:
         -   opts
             -   `entry`: string
-            -   `path`: string;
+            -   `distDir`: string;
+            -   `distFile`: string;
             -   `env`: object
         -   config: Webpack configuration
     -   Mergen them and creates very basic config with:
