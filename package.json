@@ -1,6 +1,6 @@
 {
 	"name": "@schlagerkhan/webpack-simple",
-	"version": "0.0.8",
+	"version": "0.1.0",
 	"files": [
 		"lib"
 	],
@@ -15,7 +15,7 @@
 		"test": "npx jest",
 		"clean": "rm -rf lib",
 		"build": "npx tsc",
-		"deploy": "yarn clean && yarn build && yarn test && npx lerna publish"
+		"deploy": "yarn clean && yarn test && yarn build  && yarn publish"
 	},
 	"devDependencies": {
 		"@schlagerkhan/eslint-config-ts": "^0.3.4",
