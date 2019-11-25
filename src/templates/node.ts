@@ -10,7 +10,6 @@ export interface BasicNodeOpts extends BasicOpts {
 	whitelist?: any[];
 }
 
-// prettier-ignore
 export type NodeOpts = DefaultOpts & BasicNodeOpts;
 
 export function createNodeConfig(opts: NodeOpts, otherOpts?: Configuration): Configuration {

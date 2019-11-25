@@ -7,5 +7,5 @@ export function getJsFile(includeHash?: boolean) {
 }
 
 export function getCssFile() {
-	return IS_PROD ? 'styled.[hash].css' : 'styles.css';
+	return IS_PROD ? 'styles.[hash].css' : 'styles.css';
 }

@@ -9,18 +9,18 @@ import { stats, devtool } from '../misc';
 
 export interface BasicOpts {
 	entry: string;
-	path: string;
+	distDir: string;
 	env?: {
 		[key: string]: any;
 	};
 }
 
 export interface DefaultOpts extends BasicOpts {
-	filename: string;
+	distFile: string;
 }
 
 export function createDefaultConfig(opts: DefaultOpts, otherOpts?: Configuration): Configuration {
-	const { entry, filename, path, env } = opts;
+	const { entry, distFile, distDir, env } = opts;
 	const envPlugin = createEnvPlugin(env);
 
 	return merge.smart(
@@ -29,8 +29,8 @@ export function createDefaultConfig(opts: DefaultOpts, otherOpts?: Configuration
 			mode: NODE_ENV,
 			entry,
 			output: {
-				filename,
-				path,
+				filename: distFile,
+				path: distDir,
 			},
 			resolve: {
 				extensions: ['.js', '.ts', '.tsx'],

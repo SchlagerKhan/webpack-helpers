@@ -1,11 +1,11 @@
 import { createDefaultConfig } from './default';
 
-describe('Config - Default', () => {
+describe('Config - Node', () => {
 	test('Create', () => {
 		const config = createDefaultConfig({
 			entry: 'entry',
-			path: 'path',
-			filename: 'filename',
+			distDir: 'dist',
+			distFile: 'file',
 		});
 
 		expect(config).toBeTruthy();

@@ -1,7 +1,3 @@
 {
-	"extends": "@schlagerkhan/ts",
-	"plugins": ["jest"],
-	"env": {
-		"jest/globals": true
-	}
+	"extends": "@schlagerkhan/ts"
 }
