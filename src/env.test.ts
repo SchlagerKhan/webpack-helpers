@@ -1,4 +1,4 @@
-import { NODE_ENV, RUNTIME_ENV, PORT, IS_DEV, IS_PROD } from './env';
+import { NODE_ENV, RUNTIME_ENV, PORT, IS_DEV, IS_PROD, setDefaultEnv, DEFAULT_ENV } from './env';
 
 describe('Environment', () => {
 	test('Default values', () => {
@@ -8,5 +8,10 @@ describe('Environment', () => {
 
 		expect(IS_DEV).toBe(false);
 		expect(IS_PROD).toBe(false);
+	});
+	test('Default Env', () => {
+		setDefaultEnv({ TEST_PORT: 1234 });
+
+		expect(DEFAULT_ENV.TEST_PORT).toBe(1234);
 	});
 });

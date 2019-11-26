@@ -7,18 +7,12 @@ import HtmlInjectPlugin from 'html-webpack-inject-plugin';
 import CssPlugin from 'mini-css-extract-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 
-import { NODE_ENV, RUNTIME_ENV, PORT } from './env';
+import { DEFAULT_ENV } from './env';
 
 export { HtmlPlugin, HtmlRootPlugin, HtmlInjectPlugin, CssPlugin, TerserPlugin };
 
 export function createEnvPlugin(env) {
-	return new webpack.EnvironmentPlugin(
-		env || {
-			NODE_ENV,
-			RUNTIME_ENV,
-			PORT,
-		},
-	);
+	return new webpack.EnvironmentPlugin(env || DEFAULT_ENV);
 }
 
 export function createHtmlPlugin(opts) {
