@@ -17,7 +17,7 @@ interface FrontendOpts extends BasicOpts {
 	htmlInject?: {
 		tag: string;
 		attrs: any;
-	};
+	}[];
 }
 
 export function createFrontendConfig(opts: FrontendOpts, otherOpts?: Configuration): Configuration {

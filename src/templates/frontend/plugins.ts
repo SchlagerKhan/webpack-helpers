@@ -12,7 +12,11 @@ export function getPlugins(_htmlOptions, htmlInject) {
 	];
 
 	if (htmlInject) {
-		plugins.push(new HtmlInjectPlugin());
+		plugins.push(
+			new HtmlInjectPlugin({
+				externals: htmlInject,
+			}),
+		);
 	}
 
 	return plugins;
